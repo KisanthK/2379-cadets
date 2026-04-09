@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | 2379 Burlington Army Cadets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">2379 <span class="accent">CADETS</span></a>
+
+            <button class="mobile-toggle" id="hammy" type="button" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Photo Gallery</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="join.html" class="btn-nav-tactical">Join Unit</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="page-hero__bg" style="background-image:url('img10.png')"></div>
+        <div class="page-hero__inner container reveal active">
+            <span class="page-hero__label">2379 Burlington</span>
+            <h1>Photo Gallery</h1>
+            <p>Browse event photography from training activities, remembrance ceremonies, and directed exercises.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="events-grid">
+            <div class="container">
+                <p class="events-grid__heading">Select an event</p>
+
+                <div class="events-grid__list" id="events-list"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__inner">
+                <p class="site-footer__brand">2379 Burlington Army Cadets</p>
+                <p class="site-footer__note">Photos taken by cadets and volunteers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="data/gallery-events.js"></script>
+    <script src="gallery.js"></script>
+</body>
+</html>

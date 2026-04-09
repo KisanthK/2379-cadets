@@ -1,0 +1,192 @@
+@import url('shared-base.css');
+
+/* --- Team Intro --- */
+.team-intro {
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--border);
+}
+
+.team-intro .lead-text {
+    font-size: 1.15rem;
+    color: var(--text-main);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.team-intro p {
+    color: var(--text-dim);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
+    max-width: 800px;
+}
+
+/* --- Profile Cards --- */
+.profiles-section {
+    padding: 60px 0;
+}
+
+.profile-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    background: var(--surface-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px;
+    margin-bottom: 30px;
+    transition: var(--transition-smooth);
+}
+
+.profile-card:hover {
+    border-color: var(--cadet-green);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Image placeholder - replace with real photos */
+.profile-image {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.image-placeholder {
+    width: 180px;
+    height: 220px;
+    background: var(--bg-light);
+    border: 2px dashed var(--border);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.image-placeholder svg {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+    opacity: 0.4;
+}
+
+.image-placeholder span {
+    opacity: 0.5;
+}
+
+/* Profile Content */
+.rank-badge {
+    display: inline-block;
+    background: var(--cadet-green-light);
+    color: var(--cadet-green);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+}
+
+.profile-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: var(--navy-blue);
+    margin-bottom: 18px;
+}
+
+.profile-content p {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin-bottom: 12px;
+}
+
+/* --- Staff Grid (for CI/CV without bios) --- */
+.staff-grid {
+    padding: 50px 0 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 30px;
+}
+
+.staff-grid-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: var(--navy-blue);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.staff-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.staff-card {
+    background: var(--surface-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px 20px;
+    text-align: center;
+    transition: var(--transition-smooth);
+}
+
+.staff-card:hover {
+    border-color: var(--cadet-green);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-sm);
+}
+
+.staff-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 15px;
+    color: var(--cadet-green);
+}
+
+.staff-icon svg { width: 100%; height: 100%; }
+
+.staff-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    color: var(--navy-blue);
+    margin-bottom: 8px;
+}
+
+.role-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--cadet-green);
+    background: var(--cadet-green-light);
+    padding: 3px 10px;
+    border-radius: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .profile-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .profile-image {
+        justify-content: center;
+    }
+
+    .image-placeholder {
+        width: 150px;
+        height: 180px;
+    }
+
+    .staff-cards {
+        grid-template-columns: 1fr;
+    }
+}

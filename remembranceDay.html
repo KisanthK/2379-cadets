@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>February Survival Training | 2379 Burlington Army Cadets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="remembranceDay.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">2379 <span class="accent">CADETS</span></a>
+
+            <button class="mobile-toggle" id="hammy" type="button" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Photo Gallery</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="join.html" class="btn-nav-tactical">Join Unit</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="page-hero__bg" style="background-image:url('feb-survival(10).jpg')"></div>
+        <div class="page-hero__inner container reveal active">
+            <span class="page-hero__label">2025 Event</span>
+            <h1>Remembrance Day</h1>
+            <p>Memorial ceremony, guard duty, and remembrance captured across day and evening hours.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="gallery-info">
+            <div class="container">
+                <div class="gallery-info__row reveal">
+                    <div class="gallery-info__text">
+                        <h2>Event Photographs</h2>
+                        <p>Cadet presence, ceremonial posture, wreaths, and remembrance-focused moments from the annual February event.</p>
+                    </div>
+                    <div class="gallery-info__meta">
+                        <div class="gallery-info__count">16</div>
+                        <div class="gallery-info__count-label">Photos</div>
+                    </div>
+                </div>
+                <a href="gallery.html" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back to Gallery
+                </a>
+            </div>
+        </section>
+
+        <!-- Slideshow -->
+        <section class="slideshow">
+            <div class="container">
+                <div class="slideshow__wrap reveal">
+                    <div class="slideshow__stage">
+                        <img id="slideshowImage" src="feb-survival(1).jpg" alt="Cadet standing at attention beside the memorial during the event">
+                    </div>
+                    <div class="slideshow__bar">
+                        <button class="slideshow__btn" id="slidePrev" type="button" aria-label="Previous image">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <span class="slideshow__counter" id="slideCounter">1 / 16</span>
+                        <button class="slideshow__btn" id="slideNext" type="button" aria-label="Next image">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thumbnail Grid -->
+        <section class="gallery-grid">
+            <div class="container">
+                <div class="photo-grid">
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="0">
+                        <img src="feb-survival(1).jpg" alt="Cadet standing at attention beside the memorial during the event" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="1">
+                        <img src="feb-survival(2).jpg" alt="Cadet standing beside wreaths during the event" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="2">
+                        <img src="feb-survival(3).jpg" alt="Cadets positioned around the memorial site" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="3">
+                        <img src="feb-survival(4).jpg" alt="Cadets standing in formation around the monument" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="4">
+                        <img src="feb-survival(5).jpg" alt="Evening guard image of a cadet with ceremonial rifle" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="5">
+                        <img src="feb-survival(6).jpg" alt="Cadets posted at the memorial with attendees in the background" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="6">
+                        <img src="feb-survival(7).jpg" alt="Cadets and attendees surrounding the memorial during the event" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="7">
+                        <img src="feb-survival(8).jpg" alt="Cadet standing near wreaths and memorial stone" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="8">
+                        <img src="feb-survival(9).jpg" alt="Night-time cadet guard posture in front of the memorial" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="9">
+                        <img src="feb-survival(10).jpg" alt="Cadets walking through the event area during the daytime ceremony" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="10">
+                        <img src="feb-survival(11).jpg" alt="Night-time portrait of cadet with ceremonial rifle in front of the memorial" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="11">
+                        <img src="feb-survival(12).jpg" alt="Cadets positioned on each side of the memorial during the ceremony" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="12">
+                        <img src="feb-survival(13).jpg" alt="Cadets and memorial shown in a wide daytime event shot" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="13">
+                        <img src="feb-survival(14).jpg" alt="Cadet standing in front of the memorial during the ceremony" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="14">
+                        <img src="feb-survival(15).jpg" alt="Night-time cadet formation around the memorial site" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="february" data-index="15">
+                        <img src="feb-survival(16).jpg" alt="Night-time memorial guard image with cadets in position" loading="lazy">
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__inner">
+                <p class="site-footer__brand">2379 Burlington Army Cadets</p>
+                <p class="site-footer__note">Photos taken by cadets and volunteers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <div class="lightbox__top">
+            <span class="lightbox__counter" id="lightboxCounter"></span>
+            <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close gallery">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </div>
+        <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="Previous image">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lightbox__stage">
+            <img id="lightboxImage" src="" alt="Expanded gallery image">
+            <div class="lightbox__caption" id="lightboxCaption"></div>
+        </div>
+        <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Next image">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+    </div>
+
+    <script src="remembranceDay.js"></script>
+</body>
+</html>

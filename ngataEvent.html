@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tri-Elemental Directed Activity | 2379 Burlington Army Cadets</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="ngataEvent.css">
+</head>
+<body>
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">2379 <span class="accent">CADETS</span></a>
+
+            <button class="mobile-toggle" id="hammy" type="button" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Photo Gallery</a></li>
+                <li><a href="donate.html">Donate</a></li>
+                <li><a href="join.html" class="btn-nav-tactical">Join Unit</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="page-hero__bg" style="background-image:url('tri5.jpg')"></div>
+        <div class="page-hero__inner container reveal active">
+            <span class="page-hero__label">NGATA Event</span>
+            <h1>Tri-Elemental<br>Directed Activity</h1>
+            <p>Activities included the Challenge Course, Why Things Are Seen, First Aid Training and Canadian Forces Familiarization training.</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="gallery-info">
+            <div class="container">
+                <div class="gallery-info__row reveal">
+                    <div class="gallery-info__text">
+                        <h2>Activity Photographs</h2>
+                        <p>Cadets tackling the challenge course, obstacle training, and hands-on field activities from the NGATA Tri-Elemental Area Directed Activity.</p>
+                    </div>
+                    <div class="gallery-info__meta">
+                        <div class="gallery-info__count">8</div>
+                        <div class="gallery-info__count-label">Photos</div>
+                    </div>
+                </div>
+                <a href="gallery.html" class="back-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Back to Gallery
+                </a>
+            </div>
+        </section>
+
+        <!-- Slideshow -->
+        <section class="slideshow">
+            <div class="container">
+                <div class="slideshow__wrap reveal">
+                    <div class="slideshow__stage">
+                        <img id="slideshowImage" src="tri1.jpg" alt="Cadet smiling while climbing over the obstacle course wall">
+                    </div>
+                    <div class="slideshow__bar">
+                        <button class="slideshow__btn" id="slidePrev" type="button" aria-label="Previous image">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                        <span class="slideshow__counter" id="slideCounter">1 / 8</span>
+                        <button class="slideshow__btn" id="slideNext" type="button" aria-label="Next image">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Thumbnail Grid -->
+        <section class="gallery-grid">
+            <div class="container">
+                <div class="photo-grid">
+                    <button class="photo-card reveal" type="button" data-gallery="tri" data-index="0">
+                        <img src="tri1.jpg" alt="Cadet smiling while climbing over the obstacle course wall" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="tri" data-index="1">
+                        <img src="tri2.jpg" alt="Cadet in camo helmet gripping the top of the wooden obstacle" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="tri" data-index="2">
+                        <img src="tri3.jpg" alt="Close-up of a cadet navigating the challenge course timber frame" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="tri" data-index="3">
+                        <img src="tri4.jpg" alt="Cadet pulling themselves over a log obstacle with cadets watching below" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="tri" data-index="4">
+                        <img src="tri5.jpg" alt="Cadet climbing the obstacle wall viewed from above with group below" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="tri" data-index="5">
+                        <img src="tri6.jpg" alt="Instructor selfie at the challenge course with cadet in the background" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="tri" data-index="6">
+                        <img src="tri7.jpg" alt="Cadet sitting on top of the obstacle course structure on a sunny day" loading="lazy">
+                    </button>
+                    <button class="photo-card reveal" type="button" data-gallery="tri" data-index="7">
+                        <img src="tri8.jpg" alt="Cadet scaling the wooden obstacle with other cadets gathered below" loading="lazy">
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__inner">
+                <p class="site-footer__brand">2379 Burlington Army Cadets</p>
+                <p class="site-footer__note">Photos taken by cadets and volunteers.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+        <div class="lightbox__top">
+            <span class="lightbox__counter" id="lightboxCounter"></span>
+            <button class="lightbox__close" id="lightboxClose" type="button" aria-label="Close gallery">
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M15 5L5 15M5 5l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+        </div>
+        <button class="lightbox__nav lightbox__nav--prev" id="lightboxPrev" type="button" aria-label="Previous image">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="lightbox__stage">
+            <img id="lightboxImage" src="" alt="Expanded gallery image">
+            <div class="lightbox__caption" id="lightboxCaption"></div>
+        </div>
+        <button class="lightbox__nav lightbox__nav--next" id="lightboxNext" type="button" aria-label="Next image">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+    </div>
+
+    <script src="ngataEvent.js"></script>
+</body>
+</html>
