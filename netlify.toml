@@ -36,3 +36,9 @@
     # - Images: this site + data URIs
     # - Everything else: this site only
     Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.google.com https://www.youtube.com; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'self'"
+
+# Relaxed CSP for the Decap CMS admin panel only
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; connect-src 'self' https://api.github.com https://identity.netlify.com https://*.netlify.com; frame-src 'self'; object-src 'none'"
