@@ -215,6 +215,63 @@ collections:
                 required: false
                 hint: "e.g. Visit Farm Boy Burlington South website"
 
+  # ── Resources Page ────────────────────
+  - name: "resources"
+    label: "Resources Page"
+    files:
+      - name: "resources"
+        label: "Resources Page"
+        file: "data/resources.json"
+        fields:
+          - label: "Training Program Cards"
+            name: "infoBlocks"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Icon"
+                name: "icon"
+                widget: "string"
+                hint: "A single emoji — e.g. 🏔️"
+
+              - label: "Title"
+                name: "title"
+                widget: "string"
+                hint: "e.g. Field Exercises (FTX)"
+
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                hint: "1-2 sentences describing this program area."
+
+          - label: "Resource Portal Cards"
+            name: "portalCards"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Status Badge"
+                name: "status"
+                widget: "string"
+                hint: "Short label shown at the top of the card — e.g. Updated, Mandatory, External"
+
+              - label: "Title"
+                name: "title"
+                widget: "string"
+
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                hint: "1-2 sentences describing this resource."
+
+              - label: "Link URL"
+                name: "linkUrl"
+                widget: "string"
+                hint: "Full URL (https://...) or a page filename (e.g. badge.html)"
+
+              - label: "Link Label"
+                name: "linkLabel"
+                widget: "string"
+                hint: "Text shown on the link button — e.g. Initialize Download"
+
   # ── Social Media ───────────────────────
   - name: "social"
     label: "Social Media"

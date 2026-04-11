@@ -1,9 +1,68 @@
+function renderInfoBlocks(blocks) {
+    var grid = document.getElementById("info-blocks-grid");
+    if (!grid || !blocks) return;
+
+    var rows = [];
+    for (var i = 0; i < blocks.length; i += 3) {
+        var rowItems = blocks.slice(i, i + 3).map(function(b) {
+            return (
+                '<div class="info-block">' +
+                    '<div class="block-icon">' + b.icon + '</div>' +
+                    '<h3>' + b.title + '</h3>' +
+                    '<p>' + b.description + '</p>' +
+                '</div>'
+            );
+        }).join("");
+        rows.push('<div class="grid-3">' + rowItems + '</div>');
+    }
+    grid.innerHTML = rows.join("");
+}
+
+function renderPortalCards(cards) {
+    var grid = document.getElementById("portal-cards-grid");
+    if (!grid || !cards) return;
+
+    grid.innerHTML = cards.map(function(c) {
+        return (
+            '<div class="glass-card reveal">' +
+                '<div class="card-status">' + c.status + '</div>' +
+                '<div class="card-main-content">' +
+                    '<div class="icon-box-modern">' +
+                        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">' +
+                            '<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>' +
+                            '<path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>' +
+                        '</svg>' +
+                    '</div>' +
+                    '<div class="text-content">' +
+                        '<h3>' + c.title + '</h3>' +
+                        '<p>' + c.description + '</p>' +
+                    '</div>' +
+                '</div>' +
+                '<div class="card-footer">' +
+                    '<a href="' + c.linkUrl + '" class="pro-link-modern">' + c.linkLabel + ' <span>→</span></a>' +
+                '</div>' +
+            '</div>'
+        );
+    }).join("");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+    fetch("data/resources.json")
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            renderInfoBlocks(data.infoBlocks);
+            renderPortalCards(data.portalCards);
+            document.querySelectorAll(".info-block, .glass-card, .reveal").forEach(function(el) {
+                el.classList.add("active");
+            });
+        })
+        .catch(function(err) { console.error("Could not load resources data:", err); });
+
     const navbar = document.getElementById("navbar");
     const mobileToggle = document.getElementById("hammy");
     const navMenu = document.getElementById("nav-menu");
     const navLinks = navMenu ? navMenu.querySelectorAll("a") : [];
-    const revealItems = document.querySelectorAll(".info-block, .glass-card, .reveal, .schedule-item");
+    const revealItems = document.querySelectorAll(".schedule-item");
 
     if (!navbar || !mobileToggle || !navMenu) return;
 
