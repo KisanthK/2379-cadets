@@ -1,11 +1,11 @@
-// ── Render gallery event cards from data/gallery-events.json ──
-function renderGalleryEvents(events) {
-    var list = document.getElementById("events-list");
-    if (!list || !events) return;
+// ── Render gallery event cards from data/gallery-events.js ──
+function renderGalleryEvents() {
+    const list = document.getElementById("events-list");
+    if (!list || !window.galleryEvents) return;
 
-    var arrowSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>';
+    const arrowSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>';
 
-    list.innerHTML = events.map(function(ev) {
+    list.innerHTML = window.galleryEvents.map(function(ev) {
         return (
             '<a href="' + ev.href + '" class="event-card reveal">' +
                 '<img class="event-card__img" src="' + ev.img + '" alt="' + ev.imgAlt + '">' +
@@ -21,7 +21,7 @@ function renderGalleryEvents(events) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Gallery events loaded async below
+    renderGalleryEvents();
     const navbar = document.getElementById("navbar");
     const mobileToggle = document.getElementById("hammy");
     const navMenu = document.getElementById("nav-menu");
@@ -239,15 +239,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Init
     setScrolledState();
-
-    // ── Load gallery data and render ──
-    fetch("data/gallery-events.json")
-        .then(function(r) { return r.json(); })
-        .then(function(data) {
-            renderGalleryEvents(data.events);
-            setupReveal();
-        })
-        .catch(function(err) {
-            console.error("Could not load gallery data:", err);
-        });
+    setupReveal();
 });

@@ -104,8 +104,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     // ── Load social data and render ──
-    fetch("data/social.json")
-        .then(function(r) { return r.json(); })
+    // Try window global first (works with file://), fall back to fetch
+    var socialPromise = window.socialData
+        ? Promise.resolve(window.socialData)
+        : fetch("data/social.json").then(function(r) { return r.json(); });
+
+    socialPromise
         .then(function(data) {
             renderSocial(data);
             if ("IntersectionObserver" in window) {

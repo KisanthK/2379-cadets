@@ -59,8 +59,11 @@ function renderTeam(data) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    fetch("data/officers.json")
-        .then(function(r) { return r.json(); })
+    var officersPromise = window.officersData
+        ? Promise.resolve(window.officersData)
+        : fetch("data/officers.json").then(function(r) { return r.json(); });
+
+    officersPromise
         .then(function(data) { renderTeam(data); })
         .catch(function(err) { console.error("Could not load officers data:", err); });
 

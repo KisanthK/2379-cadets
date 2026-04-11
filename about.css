@@ -293,6 +293,35 @@ img {
 }
 
 /* =========================
+   JUMP-TO BUTTON
+   ========================= */
+
+.btn-jump-committee {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 28px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    background: var(--brand-green);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: var(--transition-smooth);
+    box-shadow: 0 8px 24px rgba(27, 127, 116, 0.35);
+}
+
+.btn-jump-committee:hover,
+.btn-jump-committee:focus-visible {
+    background: var(--brand-green-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(27, 127, 116, 0.45);
+}
+
+/* =========================
    GENERIC
    ========================= */
 
