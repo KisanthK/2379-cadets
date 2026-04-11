@@ -23,7 +23,12 @@ function renderGalleryEvents(events) {
 document.addEventListener("DOMContentLoaded", () => {
     fetch("data/gallery-events.json")
         .then(function(r) { return r.json(); })
-        .then(function(data) { renderGalleryEvents(data.events); })
+        .then(function(data) {
+            renderGalleryEvents(data.events);
+            document.querySelectorAll(".reveal:not(.active)").forEach(function(el) {
+                el.classList.add("active");
+            });
+        })
         .catch(function(err) { console.error("Could not load gallery data:", err); });
     const navbar = document.getElementById("navbar");
     const mobileToggle = document.getElementById("hammy");

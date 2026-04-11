@@ -41,7 +41,12 @@ function renderOfficers(officersData) {
 document.addEventListener("DOMContentLoaded", () => {
     fetch("data/officers.json")
         .then(function(r) { return r.json(); })
-        .then(function(data) { renderOfficers(data); })
+        .then(function(data) {
+            renderOfficers(data);
+            document.querySelectorAll(".reveal:not(.active)").forEach(function(el) {
+                el.classList.add("active");
+            });
+        })
         .catch(function(err) { console.error("Could not load officers data:", err); });
     const navbar = document.getElementById("navbar");
     const mobileToggle = document.getElementById("hammy");

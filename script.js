@@ -63,6 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
     ]).then(function(results) {
         renderSchedule(results[0]);
         renderSponsors(results[1]);
+        document.querySelectorAll(".reveal:not(.active)").forEach(function(el) {
+            el.classList.add("active");
+        });
     }).catch(function(err) {
         console.error("Could not load site data:", err);
     });
