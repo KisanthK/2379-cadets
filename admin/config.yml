@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: KisanthK/2379-cadets
   branch: master
+  auth_type: pkce
+  app_id: PASTE_YOUR_GITHUB_OAUTH_CLIENT_ID_HERE
 
 # Where uploaded images are stored (root of the repo)
 media_folder: "."
