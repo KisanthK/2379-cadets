@@ -1,7 +1,10 @@
 {
   "title": "Remembrance Day",
-  "year": "2025",
+  "year": "2024",
   "label": "2025 Event",
+  "thumbnail": "feb-survival(10).jpg",
+  "thumbnailAlt": "Remembrance Day",
+  "cardDescription": "Memorial ceremony, guard duty, and remembrance across day and evening hours. 16 photos.",
   "heroDescription": "Memorial ceremony, guard duty, and remembrance captured across day and evening hours.",
   "heroImage": "feb-survival(10).jpg",
   "galleryDescription": "Cadet presence, ceremonial posture, wreaths, and remembrance-focused moments from the annual event.",

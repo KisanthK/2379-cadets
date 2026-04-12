@@ -1,4 +1,4 @@
-// ── Render gallery event cards from data/gallery-events.json ──
+// ── Render gallery event cards from data/events/*.json ──
 function renderGalleryEvents(events) {
     const list = document.getElementById("events-list");
     if (!list || !events) return;
@@ -7,12 +7,12 @@ function renderGalleryEvents(events) {
 
     list.innerHTML = events.map(function(ev) {
         return (
-            '<a href="' + ev.href + '" class="event-card reveal">' +
-                '<img class="event-card__img" src="' + ev.img + '" alt="' + ev.imgAlt + '">' +
+            '<a href="eventGallery.html?id=' + ev.id + '" class="event-card reveal">' +
+                '<img class="event-card__img" src="' + ev.thumbnail + '" alt="' + ev.thumbnailAlt + '">' +
                 '<div class="event-card__body">' +
                     '<span class="event-card__year">' + ev.year + '</span>' +
                     '<h2 class="event-card__title">' + ev.title + '</h2>' +
-                    '<p class="event-card__desc">' + ev.desc + '</p>' +
+                    '<p class="event-card__desc">' + ev.cardDescription + '</p>' +
                 '</div>' +
                 '<div class="event-card__arrow">' + arrowSvg + '</div>' +
             '</a>'
@@ -24,7 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch("data/gallery-events.json")
         .then(function(r) { return r.json(); })
         .then(function(data) {
-            renderGalleryEvents(data.events);
+            return Promise.all(
+                data.eventIds.map(function(id) {
+                    return fetch("data/events/" + id + ".json")
+                        .then(function(r) { return r.json(); })
+                        .then(function(ev) { ev.id = id; return ev; });
+                })
+            );
+        })
+        .then(function(events) {
+            renderGalleryEvents(events);
             document.querySelectorAll(".reveal:not(.active)").forEach(function(el) {
                 el.classList.add("active");
             });

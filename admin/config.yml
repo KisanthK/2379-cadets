@@ -138,7 +138,7 @@ collections:
 
   # ── Event Gallery Pages ───────────────
   - name: "event-galleries"
-    label: "Event Gallery Pages"
+    label: "Event Galleries"
     folder: "data/events"
     create: true
     slug: "{{slug}}"
@@ -159,22 +159,37 @@ collections:
       - label: "Label"
         name: "label"
         widget: "string"
-        hint: "Short tag shown above the title — e.g. 2025 Event"
+        hint: "Short tag shown above the title on the event page — e.g. 2025 Event"
+
+      - label: "Gallery Card Thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        hint: "The single image shown on the Photo Gallery page as the card preview."
+
+      - label: "Thumbnail Description (accessibility)"
+        name: "thumbnailAlt"
+        widget: "string"
+        hint: "Brief description of the thumbnail image."
+
+      - label: "Card Description"
+        name: "cardDescription"
+        widget: "text"
+        hint: "1-2 sentences shown on the gallery card. Mention the number of photos."
+
+      - label: "Hero Image"
+        name: "heroImage"
+        widget: "image"
+        hint: "Banner image shown at the top of the event page."
 
       - label: "Hero Description"
         name: "heroDescription"
         widget: "text"
         hint: "1-2 sentences shown on the hero banner."
 
-      - label: "Hero Image"
-        name: "heroImage"
-        widget: "image"
-        hint: "Main banner image for this event page."
-
       - label: "Gallery Description"
         name: "galleryDescription"
         widget: "text"
-        hint: "1-2 sentences shown above the photo count."
+        hint: "1-2 sentences shown above the photo count on the event page."
 
       - label: "Photos"
         name: "photos"
@@ -191,48 +206,22 @@ collections:
             widget: "string"
             hint: "Brief description of what the photo shows."
 
-  # ── Photo Gallery Events ───────────────
+  # ── Photo Gallery Order ───────────────
   - name: "gallery"
-    label: "Photo Gallery Cards"
+    label: "Photo Gallery Order"
     files:
       - name: "gallery-events"
-        label: "Gallery Events"
+        label: "Gallery Order"
         file: "data/gallery-events.json"
         fields:
-          - label: "Events"
-            name: "events"
+          - label: "Event Order"
+            name: "eventIds"
             widget: "list"
-            summary: "{{fields.title}} ({{fields.year}})"
-            fields:
-              - label: "Event Page"
-                name: "href"
-                widget: "string"
-                hint: "Use this format: eventGallery.html?id=yourEventName — the name must match the file you created in Event Gallery Pages."
-
-              - label: "Thumbnail Image"
-                name: "img"
-                widget: "image"
-                hint: "The card thumbnail shown on the gallery page."
-
-              - label: "Image Description (for accessibility)"
-                name: "imgAlt"
-                widget: "string"
-                hint: "Brief description of what the thumbnail shows."
-
-              - label: "Year"
-                name: "year"
-                widget: "string"
-                hint: "e.g. 2025"
-
-              - label: "Event Title"
-                name: "title"
-                widget: "string"
-                hint: "The name displayed on the gallery card."
-
-              - label: "Short Description"
-                name: "desc"
-                widget: "text"
-                hint: "1-2 sentences shown on the card. Mention the number of photos."
+            hint: "Add the filename (without .json) of each event in the order you want them to appear. e.g. summerParade2025"
+            field:
+              label: "Event ID"
+              name: "eventId"
+              widget: "string"
 
   # ── Sponsors ───────────────────────────
   - name: "sponsors"
