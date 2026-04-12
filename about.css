@@ -505,6 +505,10 @@ img {
     margin-top: 26px;
 }
 
+.staff-grid .officer-card {
+    grid-column: 1 / -1;
+}
+
 .staff-card {
     background: rgba(255, 255, 255, 0.95);
     border: 1px solid var(--border-soft);
