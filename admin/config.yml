@@ -136,9 +136,64 @@ collections:
                   name: "tag"
                   widget: "string"
 
+  # ── Event Gallery Pages ───────────────
+  - name: "event-galleries"
+    label: "Event Gallery Pages"
+    folder: "data/events"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{fields.title}} ({{fields.year}})"
+    fields:
+      - label: "Event Title"
+        name: "title"
+        widget: "string"
+        hint: "e.g. Summer Parade 2025"
+
+      - label: "Year"
+        name: "year"
+        widget: "string"
+        hint: "e.g. 2025"
+
+      - label: "Label"
+        name: "label"
+        widget: "string"
+        hint: "Short tag shown above the title — e.g. 2025 Event"
+
+      - label: "Hero Description"
+        name: "heroDescription"
+        widget: "text"
+        hint: "1-2 sentences shown on the hero banner."
+
+      - label: "Hero Image"
+        name: "heroImage"
+        widget: "image"
+        hint: "Main banner image for this event page."
+
+      - label: "Gallery Description"
+        name: "galleryDescription"
+        widget: "text"
+        hint: "1-2 sentences shown above the photo count."
+
+      - label: "Photos"
+        name: "photos"
+        widget: "list"
+        summary: "{{fields.alt}}"
+        fields:
+          - label: "Photo"
+            name: "src"
+            widget: "image"
+            hint: "Upload the photo."
+
+          - label: "Photo Description (accessibility)"
+            name: "alt"
+            widget: "string"
+            hint: "Brief description of what the photo shows."
+
   # ── Photo Gallery Events ───────────────
   - name: "gallery"
-    label: "Photo Gallery"
+    label: "Photo Gallery Cards"
     files:
       - name: "gallery-events"
         label: "Gallery Events"
@@ -152,7 +207,7 @@ collections:
               - label: "Event Page"
                 name: "href"
                 widget: "string"
-                hint: "The HTML filename for this event's photo page — e.g. remembranceDay.html"
+                hint: "Use this format: eventGallery.html?id=yourEventName — the name must match the file you created in Event Gallery Pages."
 
               - label: "Thumbnail Image"
                 name: "img"

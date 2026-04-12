@@ -1,0 +1,18 @@
+{
+  "title": "NGATA Tri-Elemental Directed Activity",
+  "year": "2024",
+  "label": "NGATA Event",
+  "heroDescription": "Activities included the Challenge Course, Why Things Are Seen, First Aid Training and Canadian Forces Familiarization training.",
+  "heroImage": "tri1.jpg",
+  "galleryDescription": "Cadets tackling the challenge course, obstacle training, and hands-on field activities from the NGATA Tri-Elemental Area Directed Activity.",
+  "photos": [
+    { "src": "tri1.jpg", "alt": "Cadet smiling while climbing over the obstacle course wall" },
+    { "src": "tri2.jpg", "alt": "Cadet in camo helmet gripping the top of the wooden obstacle" },
+    { "src": "tri3.jpg", "alt": "Close-up of a cadet navigating the challenge course timber frame" },
+    { "src": "tri4.jpg", "alt": "Cadet pulling themselves over a log obstacle with cadets watching below" },
+    { "src": "tri5.jpg", "alt": "Cadet climbing the obstacle wall viewed from above with group below" },
+    { "src": "tri6.jpg", "alt": "Instructor selfie at the challenge course with cadet in the background" },
+    { "src": "tri7.jpg", "alt": "Cadet sitting on top of the obstacle course structure on a sunny day" },
+    { "src": "tri8.jpg", "alt": "Cadet scaling the wooden obstacle with other cadets gathered below" }
+  ]
+}

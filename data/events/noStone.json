@@ -1,0 +1,15 @@
+{
+  "title": "No Stone Left Alone",
+  "year": "2024",
+  "label": "2024 Event",
+  "heroDescription": "Grassroots movement for youth in Canada to participate in a meaningful act of Remembrance.",
+  "heroImage": "s5.jpg",
+  "galleryDescription": "Cadets in formation, wreath presentations, and moments of remembrance captured during the outdoor ceremony.",
+  "photos": [
+    { "src": "s1.jpg", "alt": "Cadets carrying wreaths during the remembrance ceremony on an autumn day" },
+    { "src": "s2.jpg", "alt": "Cadets standing in formation during the outdoor remembrance service" },
+    { "src": "s3.jpg", "alt": "Army, sea, and air cadets lined up at attention beside memorial headstones" },
+    { "src": "s4.jpg", "alt": "Tri-elemental cadets posing together in dress uniforms at the ceremony grounds" },
+    { "src": "s5.jpg", "alt": "Wide view of attendees paying respects among rows of headstones on a clear autumn day" }
+  ]
+}
