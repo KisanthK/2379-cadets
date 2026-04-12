@@ -3,7 +3,7 @@ backend:
   repo: KisanthK/2379-cadets
   branch: master
   auth_type: pkce
-  app_id: PASTE_YOUR_GITHUB_OAUTH_CLIENT_ID_HERE
+  app_id: Ov23liDwT9JRxLm09ABi
 
 # Where uploaded images are stored (root of the repo)
 media_folder: "."
