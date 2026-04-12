@@ -34,8 +34,8 @@
     }
   ],
   "staff": [
-    { "name": "Christopher Merkle",  "role": "Civilian Instructor" },
-    { "name": "Priscilla Capellan",  "role": "Civilian Volunteer" },
-    { "name": "Michaela Paterson",   "role": "Civilian Volunteer" }
+    { "photo": "", "photoAlt": "", "rank": "Civilian Instructor", "name": "Christopher Merkle", "bio": "", "tags": [] },
+    { "photo": "", "photoAlt": "", "rank": "Civilian Volunteer",  "name": "Priscilla Capellan", "bio": "", "tags": [] },
+    { "photo": "", "photoAlt": "", "rank": "Civilian Volunteer",  "name": "Michaela Paterson",  "bio": "", "tags": [] }
   ]
 }

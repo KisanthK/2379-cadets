@@ -98,17 +98,43 @@ collections:
             widget: "list"
             summary: "{{fields.name}}"
             fields:
-              - label: "Name"
+              - label: "Photo"
+                name: "photo"
+                widget: "image"
+                required: false
+                hint: "Upload a photo of the staff member."
+
+              - label: "Photo Description (for accessibility)"
+                name: "photoAlt"
+                widget: "string"
+                required: false
+                hint: "e.g. Civilian Instructor Christopher Merkle"
+
+              - label: "Rank / Role Badge"
+                name: "rank"
+                widget: "string"
+                hint: "Short label shown above the name — e.g. Civilian Instructor"
+
+              - label: "Full Name"
                 name: "name"
                 widget: "string"
                 hint: "First and last name only (no rank prefix)"
 
-              - label: "Role"
-                name: "role"
-                widget: "select"
-                options:
-                  - "Civilian Instructor"
-                  - "Civilian Volunteer"
+              - label: "Biography"
+                name: "bio"
+                widget: "text"
+                required: false
+                hint: "Write a short biography. Press Enter twice between paragraphs."
+
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                required: false
+                hint: "Short labels shown at the bottom of the card."
+                field:
+                  label: "Tag"
+                  name: "tag"
+                  widget: "string"
 
   # ── Photo Gallery Events ───────────────
   - name: "gallery"

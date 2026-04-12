@@ -27,11 +27,30 @@ function renderOfficers(officersData) {
 
     if (staffGrid && officersData.staff) {
         staffGrid.innerHTML = officersData.staff.map(function(s) {
+            if (s.photo) {
+                var bioArr = s.bio ? (Array.isArray(s.bio) ? s.bio : s.bio.split(/\n\n+/)) : [];
+                var bioHtml = bioArr.map(function(p) { return "<p>" + p.trim() + "</p>"; }).join("");
+                var tagsHtml = (s.tags || []).map(function(t) { return '<span class="chip">' + t + "</span>"; }).join("");
+                return (
+                    '<article class="officer-card officer-card--featured reveal">' +
+                        '<div class="officer-accent"></div>' +
+                        '<div class="officer-photo-wrap">' +
+                            '<img src="' + s.photo + '" alt="' + (s.photoAlt || s.name) + '" class="officer-photo">' +
+                        '</div>' +
+                        '<div class="officer-body">' +
+                            '<div class="officer-rank-badge">' + s.rank + '</div>' +
+                            '<h3>' + s.name + '</h3>' +
+                            bioHtml +
+                            '<div class="officer-tags">' + tagsHtml + '</div>' +
+                        '</div>' +
+                    '</article>'
+                );
+            }
             return (
                 '<div class="staff-card">' +
                     '<div class="staff-icon">\uD83C\uDF96\uFE0F</div>' +
                     '<h4>' + s.name + '</h4>' +
-                    '<p>' + s.role + '</p>' +
+                    '<p>' + s.rank + '</p>' +
                 '</div>'
             );
         }).join("");
