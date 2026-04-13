@@ -53,10 +53,14 @@
     {
       "photo": "dcxc1l5g.jpeg",
       "photoAlt": "the web developer",
-      "rank": "Web Developer ",
-      "name": "Kisanth KANNATHASAN ",
+      "rank": "Web Developer",
+      "name": "Kisanth KANNATHASAN",
       "bio": "FRIEND OF LUCIAS PATERSONdsadas das dasd asdwqd qdqd RRD SAD AD AD QSQd sad32",
-      "tags": []
+      "tags": [
+        "html",
+        "css",
+        "js"
+      ]
     }
   ]
 }
