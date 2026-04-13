@@ -29,36 +29,20 @@
       "icon": "📜",
       "title": "Bursaries & Grants",
       "description": "Academic recognition and scholarship opportunities for senior cadets."
+    },
+    {
+      "icon": "qqqq",
+      "title": "WebDeveloper",
+      "description": "Learn with Kisanth L)("
     }
   ],
   "portalCards": [
     {
-      "status": "v2.4 Ready",
+      "status": "****",
       "title": "Training Manual",
-      "description": "Standardized regulations and field procedures for all Star Levels.",
+      "description": "Standardized regulations and field procedures for all Star Levels.dsadasdasda",
       "linkUrl": "https://drive.google.com/file/d/1b9JAzAgGbqxxlv9rPXwQBXYVVr1TYLAh/view",
       "linkLabel": "Initialize Download"
-    },
-    {
-      "status": "Mandatory",
-      "title": "Qualification",
-      "description": "Official QSP requirements and proficiency testing criteria.",
-      "linkUrl": "qualification.html",
-      "linkLabel": "View Standards"
-    },
-    {
-      "status": "Updated",
-      "title": "Dress & Badges",
-      "description": "Uniform standards and strategic badge placement guides.",
-      "linkUrl": "badge.html",
-      "linkLabel": "Uniform SOP"
-    },
-    {
-      "status": "External",
-      "title": "Awards & Grants",
-      "description": "Academic recognition and scholarship opportunities for seniors.",
-      "linkUrl": "https://www.armycadetleague.ca/awards-grants-and-bursaries/",
-      "linkLabel": "Launch Portal"
     }
   ]
 }
