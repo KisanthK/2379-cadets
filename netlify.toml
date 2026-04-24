@@ -1,0 +1,44 @@
+# ─────────────────────────────────────────────
+# Netlify configuration — security headers
+# ─────────────────────────────────────────────
+
+# Force HTTPS for all traffic
+[[redirects]]
+  from   = "http://*"
+  to     = "https://:splat"
+  status = 301
+  force  = true
+
+# Security headers applied to every page
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Prevent the site from being embedded in iframes on other domains
+    X-Frame-Options = "SAMEORIGIN"
+
+    # Stop browsers from sniffing MIME types
+    X-Content-Type-Options = "nosniff"
+
+    # Control how much referrer info is sent when following links
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Disable access to sensitive browser features not needed by this site
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+    # Tell browsers to only connect over HTTPS for the next year
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
+    # Content Security Policy:
+    # - Scripts: only from this site
+    # - Styles: this site + Google Fonts stylesheet
+    # - Fonts: Google Fonts CDN only
+    # - Frames: Google Maps + YouTube only
+    # - Images: this site + data URIs
+    # - Everything else: this site only
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://identity.netlify.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; frame-src https://www.google.com https://www.youtube.com; img-src 'self' data: blob:; connect-src 'self' https://identity.netlify.com https://*.netlify.com; object-src 'none'; base-uri 'self'; form-action 'self'"
+
+# Relaxed CSP for the Decap CMS admin panel only
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-eval' https://unpkg.com https://identity.netlify.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; connect-src 'self' blob: https://api.github.com https://api.netlify.com https://identity.netlify.com https://*.netlify.com https://*.netlify.app; frame-src 'self' blob:; worker-src 'self' blob:; object-src 'none'"

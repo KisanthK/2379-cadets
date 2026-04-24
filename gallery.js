@@ -1,18 +1,18 @@
-// ── Render gallery event cards from data/gallery-events.js ──
-function renderGalleryEvents() {
+// ── Render gallery event cards from data/events/*.json ──
+function renderGalleryEvents(events) {
     const list = document.getElementById("events-list");
-    if (!list || !window.galleryEvents) return;
+    if (!list || !events) return;
 
     const arrowSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>';
 
-    list.innerHTML = window.galleryEvents.map(function(ev) {
+    list.innerHTML = events.map(function(ev) {
         return (
-            '<a href="' + ev.href + '" class="event-card reveal">' +
-                '<img class="event-card__img" src="' + ev.img + '" alt="' + ev.imgAlt + '">' +
+            '<a href="eventGallery.html?id=' + ev.id + '" class="event-card reveal">' +
+                '<img class="event-card__img" src="' + ev.thumbnail + '" alt="' + ev.thumbnailAlt + '">' +
                 '<div class="event-card__body">' +
                     '<span class="event-card__year">' + ev.year + '</span>' +
                     '<h2 class="event-card__title">' + ev.title + '</h2>' +
-                    '<p class="event-card__desc">' + ev.desc + '</p>' +
+                    '<p class="event-card__desc">' + ev.cardDescription + '</p>' +
                 '</div>' +
                 '<div class="event-card__arrow">' + arrowSvg + '</div>' +
             '</a>'
@@ -21,7 +21,24 @@ function renderGalleryEvents() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    renderGalleryEvents();
+    fetch("data/gallery-events.json")
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            return Promise.all(
+                data.eventIds.map(function(id) {
+                    return fetch("data/events/" + id + ".json")
+                        .then(function(r) { return r.json(); })
+                        .then(function(ev) { ev.id = id; return ev; });
+                })
+            );
+        })
+        .then(function(events) {
+            renderGalleryEvents(events);
+            document.querySelectorAll(".reveal:not(.active)").forEach(function(el) {
+                el.classList.add("active");
+            });
+        })
+        .catch(function(err) { console.error("Could not load gallery data:", err); });
     const navbar = document.getElementById("navbar");
     const mobileToggle = document.getElementById("hammy");
     const navMenu = document.getElementById("nav-menu");

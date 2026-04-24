@@ -1,9 +1,7 @@
-// ── Render training schedule from data/schedule.js ──
-function renderSchedule() {
+// ── Render training schedule from data/schedule.json ──
+function renderSchedule(s) {
     var card = document.getElementById("schedule-card");
-    if (!card || !window.scheduleData) return;
-    var s = window.scheduleData;
-    var btn = card.querySelector(".btn-primary-cta");
+    if (!card || !s) return;
 
     var html =
         '<div class="log-group">' +
@@ -30,9 +28,9 @@ function renderSchedule() {
     card.insertAdjacentHTML("afterbegin", html);
 }
 
-// ── Render sponsors from data/sponsors.js ──
-function renderSponsors() {
-    if (!window.sponsorsData) return;
+// ── Render sponsors from data/sponsors.json ──
+function renderSponsors(sponsorsData) {
+    if (!sponsorsData) return;
 
     var primaryEl   = document.getElementById("primary-sponsors");
     var secondaryEl = document.getElementById("secondary-sponsors");
@@ -46,21 +44,31 @@ function renderSponsors() {
     }
 
     if (primaryEl) {
-        primaryEl.innerHTML = window.sponsorsData.primary.map(function(s) {
+        primaryEl.innerHTML = sponsorsData.primary.map(function(s) {
             return logoCard(s, "logo-card-premium");
         }).join("");
     }
 
     if (secondaryEl) {
-        secondaryEl.innerHTML = window.sponsorsData.secondary.map(function(s) {
+        secondaryEl.innerHTML = sponsorsData.secondary.map(function(s) {
             return logoCard(s, "logo-card-standard");
         }).join("");
     }
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    renderSchedule();
-    renderSponsors();
+    Promise.all([
+        fetch("data/schedule.json").then(function(r) { return r.json(); }),
+        fetch("data/sponsors.json").then(function(r) { return r.json(); })
+    ]).then(function(results) {
+        renderSchedule(results[0]);
+        renderSponsors(results[1]);
+        document.querySelectorAll(".reveal:not(.active)").forEach(function(el) {
+            el.classList.add("active");
+        });
+    }).catch(function(err) {
+        console.error("Could not load site data:", err);
+    });
     const navbar = document.getElementById("navbar");
     const mobileToggle = document.getElementById("hammy");
     const navMenu = document.getElementById("nav-menu");

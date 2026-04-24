@@ -1,0 +1,25 @@
+{
+  "title": "February Survival Training Night",
+  "year": "2025",
+  "label": "2024 Event",
+  "thumbnail": "img2.png",
+  "thumbnailAlt": "February Survival Training Night",
+  "cardDescription": "Indoor training, practical demonstrations, and structured instruction. 12 photos.",
+  "heroDescription": "Indoor training, practical demonstrations, and structured instruction.",
+  "heroImage": "img10.png",
+  "galleryDescription": "Cadets and instructors during the February indoor survival training night.",
+  "photos": [
+    { "src": "img1.png",  "alt": "Cadets standing in formation indoors during the directed activity" },
+    { "src": "img2.png",  "alt": "Instructor leading a practical demonstration while cadets observe" },
+    { "src": "img3.png",  "alt": "Cadets lined up along the wall during the indoor activity" },
+    { "src": "img4.png",  "alt": "Cadets standing in formation and listening during the training session" },
+    { "src": "img5.png",  "alt": "Cadets and instructors gathered around a table during a practical demonstration" },
+    { "src": "img6.png",  "alt": "Instructor guiding a cadet through a hands-on practical activity" },
+    { "src": "img7.png",  "alt": "Wide room overview showing participants assembled for the training event" },
+    { "src": "img8.png",  "alt": "Close-up of cadet participation during instructor-led activity" },
+    { "src": "img9.png",  "alt": "Indoor activity floor overview with cadets and instructors in session" },
+    { "src": "img10.png", "alt": "Wide indoor training overview with cadets and instructors gathered for activity instruction" },
+    { "src": "img11.png", "alt": "Rear perspective of cadets observing an instructor during the indoor activity" },
+    { "src": "img12.png", "alt": "Cadets lined up and attentive during the directed training activity" }
+  ]
+}
