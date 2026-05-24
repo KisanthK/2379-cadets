@@ -35,7 +35,9 @@
         "CBSA Officer",
         "2x BA McMaster"
       ]
-    },
+    }
+  ],
+  "staff": [
     {
       "photo": "officer.jpg",
       "photoAlt": "Captain (Retired) Phil Harris",
@@ -46,20 +48,6 @@
         "Former CO (2003-2006)",
         "35 Years CBSA",
         "Queen's Jubilee Medal"
-      ]
-    }
-  ],
-  "staff": [
-    {
-      "photo": "dcxc1l5g.jpeg",
-      "photoAlt": "the web developer",
-      "rank": "Web Developer",
-      "name": "Kisanth KANNATHASAN",
-      "bio": "FRIEND OF LUCIAS PATERSONdsadas das dasd asdwqd qdqd RRD SAD AD AD QSQd sad32",
-      "tags": [
-        "html",
-        "css",
-        "js"
       ]
     }
   ]
