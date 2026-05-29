@@ -1459,6 +1459,9 @@ img {
 } 
 /* =========================
    FOOTER
+   ========================= */ 
+/* =========================
+   FOOTER — paste at the bottom of ALL css files
    ========================= */
 
 .footer {
@@ -1468,11 +1471,11 @@ img {
 
 .footer-inner {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 40px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
     padding-bottom: 40px;
-    flex-wrap: wrap;
 }
 
 .footer-brand span {
@@ -1497,16 +1500,16 @@ img {
 .footer-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 24px;
-    align-items: center;
+    justify-content: center;
+    gap: 8px 28px;
 }
 
 .footer-links a {
     color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 700;
-    letter-spacing: 1.2px;
+    letter-spacing: 1.4px;
     text-transform: uppercase;
     transition: color 0.25s ease;
 }
@@ -1517,7 +1520,7 @@ img {
 
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 20px 0;
+    padding: 20px 0 28px;
     text-align: center;
 }
 
@@ -1528,7 +1531,7 @@ img {
 }
 
 .footer-credit {
-    margin-top: 6px;
+    margin-top: 8px;
     color: rgba(255, 255, 255, 0.3);
     font-size: 0.75rem;
     letter-spacing: 0.03em;
@@ -1543,17 +1546,4 @@ img {
 
 .footer-credit a:hover {
     color: #fff;
-}
-
-@media (max-width: 768px) {
-    .footer-inner {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 28px;
-    }
-
-    .footer-links {
-        justify-content: center;
-    }
 }
