@@ -1,0 +1,412 @@
+backend:
+  name: github
+  repo: KisanthK/2379-cadets
+  branch: master
+  base_url: https://2379-cadets.kisanthk-90.workers.dev
+
+# Where uploaded images are stored (root of the repo)
+media_folder: "."
+public_folder: ""
+
+# ─────────────────────────────────────────
+# CONTENT COLLECTIONS
+# Each section below maps to one data file.
+# ─────────────────────────────────────────
+collections:
+
+  # ── Training Schedule ──────────────────
+  - name: "schedule"
+    label: "Training Schedule"
+    files:
+      - name: "schedule"
+        label: "Training Schedule"
+        file: "data/schedule.json"
+        fields:
+          - label: "Training Day"
+            name: "trainingDay"
+            widget: "string"
+            hint: "e.g. Thursday Evenings"
+
+          - label: "Training Time"
+            name: "trainingTime"
+            widget: "string"
+            hint: "e.g. 18:30 – 21:00"
+
+          - label: "Address Line 1"
+            name: "addressLine1"
+            widget: "string"
+            hint: "Street address"
+
+          - label: "Address Line 2"
+            name: "addressLine2"
+            widget: "string"
+            hint: "City and province"
+
+          - label: "Entrance Instructions"
+            name: "entranceNoteHtml"
+            widget: "string"
+            hint: "Directions for finding the entrance. Use <strong>word</strong> to bold important words."
+
+  # ── Officers & Staff ───────────────────
+  - name: "officers"
+    label: "Officers & Staff"
+    files:
+      - name: "officers"
+        label: "Officers & Staff"
+        file: "data/officers.json"
+        fields:
+          - label: "Featured Officers"
+            name: "featured"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Photo"
+                name: "photo"
+                widget: "image"
+                required: false
+                hint: "Upload a photo of the officer."
+
+              - label: "Photo Description (for accessibility)"
+                name: "photoAlt"
+                widget: "string"
+                hint: "e.g. Captain Shawn Fowler"
+
+              - label: "Rank / Role Badge"
+                name: "rank"
+                widget: "string"
+                hint: "Short label shown above the name — e.g. Commanding Officer"
+
+              - label: "Full Name"
+                name: "name"
+                widget: "string"
+                hint: "e.g. Captain Shawn Fowler"
+
+              - label: "Biography"
+                name: "bio"
+                widget: "text"
+                hint: "Write the full biography. Press Enter twice (blank line) between paragraphs."
+
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                hint: "Short labels shown at the bottom of the card. Click Add to add more."
+                field:
+                  label: "Tag"
+                  name: "tag"
+                  widget: "string"
+
+          - label: "Additional Staff"
+            name: "staff"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Photo"
+                name: "photo"
+                widget: "image"
+                required: false
+                hint: "Upload a photo of the staff member."
+
+              - label: "Photo Description (for accessibility)"
+                name: "photoAlt"
+                widget: "string"
+                required: false
+                hint: "e.g. Civilian Instructor Christopher Merkle"
+
+              - label: "Rank / Role Badge"
+                name: "rank"
+                widget: "string"
+                hint: "Short label shown above the name — e.g. Civilian Instructor"
+
+              - label: "Full Name"
+                name: "name"
+                widget: "string"
+                hint: "First and last name only (no rank prefix)"
+
+              - label: "Biography"
+                name: "bio"
+                widget: "text"
+                required: false
+                hint: "Write a short biography. Press Enter twice between paragraphs."
+
+              - label: "Tags"
+                name: "tags"
+                widget: "list"
+                required: false
+                hint: "Short labels shown at the bottom of the card."
+                field:
+                  label: "Tag"
+                  name: "tag"
+                  widget: "string"
+
+  # ── Event Gallery Pages ───────────────
+  - name: "event-galleries"
+    label: "Event Galleries"
+    folder: "data/events"
+    create: true
+    slug: "{{slug}}"
+    extension: "json"
+    format: "json"
+    summary: "{{fields.title}} ({{fields.year}})"
+    fields:
+      - label: "Event Title"
+        name: "title"
+        widget: "string"
+        hint: "e.g. Summer Parade 2025"
+
+      - label: "Year"
+        name: "year"
+        widget: "string"
+        hint: "e.g. 2025"
+
+      - label: "Label"
+        name: "label"
+        widget: "string"
+        hint: "Short tag shown above the title on the event page — e.g. 2025 Event"
+
+      - label: "Gallery Card Thumbnail"
+        name: "thumbnail"
+        widget: "image"
+        hint: "The single image shown on the Photo Gallery page as the card preview."
+
+      - label: "Thumbnail Description (accessibility)"
+        name: "thumbnailAlt"
+        widget: "string"
+        hint: "Brief description of the thumbnail image."
+
+      - label: "Card Description"
+        name: "cardDescription"
+        widget: "text"
+        hint: "1-2 sentences shown on the gallery card. Mention the number of photos."
+
+      - label: "Hero Image"
+        name: "heroImage"
+        widget: "image"
+        hint: "Banner image shown at the top of the event page."
+
+      - label: "Hero Description"
+        name: "heroDescription"
+        widget: "text"
+        hint: "1-2 sentences shown on the hero banner."
+
+      - label: "Gallery Description"
+        name: "galleryDescription"
+        widget: "text"
+        hint: "1-2 sentences shown above the photo count on the event page."
+
+      - label: "Photos"
+        name: "photos"
+        widget: "list"
+        summary: "{{fields.alt}}"
+        fields:
+          - label: "Photo"
+            name: "src"
+            widget: "image"
+            hint: "Upload the photo."
+
+          - label: "Photo Description (accessibility)"
+            name: "alt"
+            widget: "string"
+            hint: "Brief description of what the photo shows."
+
+  # ── Photo Gallery Order ───────────────
+  - name: "gallery"
+    label: "Photo Gallery Order"
+    files:
+      - name: "gallery-events"
+        label: "Gallery Order"
+        file: "data/gallery-events.json"
+        fields:
+          - label: "Event Order"
+            name: "eventIds"
+            widget: "list"
+            hint: "Add the filename (without .json) of each event in the order you want them to appear. e.g. summerParade2025"
+            field:
+              label: "Event ID"
+              name: "eventId"
+              widget: "string"
+
+  # ── Sponsors ───────────────────────────
+  - name: "sponsors"
+    label: "Sponsors"
+    files:
+      - name: "sponsors"
+        label: "Sponsors"
+        file: "data/sponsors.json"
+        fields:
+          - label: "Primary Sponsors (large cards)"
+            name: "primary"
+            widget: "list"
+            summary: "{{fields.alt}}"
+            fields:
+              - label: "Logo Image"
+                name: "img"
+                widget: "image"
+                hint: "Upload the sponsor's logo."
+
+              - label: "Sponsor Name"
+                name: "alt"
+                widget: "string"
+                hint: "Used as the image alt text — e.g. Royal Canadian Legion"
+
+              - label: "Website URL"
+                name: "href"
+                widget: "string"
+                required: false
+                hint: "Full URL starting with https:// — leave blank if no website."
+
+              - label: "Link Label (accessibility)"
+                name: "ariaLabel"
+                widget: "string"
+                required: false
+                hint: "e.g. Visit Royal Canadian Legion Branch 60 website"
+
+          - label: "Secondary Sponsors (smaller cards)"
+            name: "secondary"
+            widget: "list"
+            summary: "{{fields.alt}}"
+            fields:
+              - label: "Logo Image"
+                name: "img"
+                widget: "image"
+                hint: "Upload the sponsor's logo."
+
+              - label: "Sponsor Name"
+                name: "alt"
+                widget: "string"
+                hint: "Used as the image alt text — e.g. Farm Boy"
+
+              - label: "Website URL"
+                name: "href"
+                widget: "string"
+                required: false
+                hint: "Full URL starting with https:// — leave blank if no website."
+
+              - label: "Link Label (accessibility)"
+                name: "ariaLabel"
+                widget: "string"
+                required: false
+                hint: "e.g. Visit Farm Boy Burlington South website"
+
+  # ── Resources Page ────────────────────
+  - name: "resources"
+    label: "Resources Page"
+    files:
+      - name: "resources"
+        label: "Resources Page"
+        file: "data/resources.json"
+        fields:
+          - label: "Training Program Cards"
+            name: "infoBlocks"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Icon"
+                name: "icon"
+                widget: "string"
+                hint: "A single emoji — e.g. 🏔️"
+
+              - label: "Title"
+                name: "title"
+                widget: "string"
+                hint: "e.g. Field Exercises (FTX)"
+
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                hint: "1-2 sentences describing this program area."
+
+          - label: "Resource Portal Cards"
+            name: "portalCards"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Status Badge"
+                name: "status"
+                widget: "string"
+                hint: "Short label shown at the top of the card — e.g. Updated, Mandatory, External"
+
+              - label: "Title"
+                name: "title"
+                widget: "string"
+
+              - label: "Description"
+                name: "description"
+                widget: "text"
+                hint: "1-2 sentences describing this resource."
+
+              - label: "Link URL"
+                name: "linkUrl"
+                widget: "string"
+                hint: "Full URL (https://...) or a page filename (e.g. badge.html)"
+
+              - label: "Link Label"
+                name: "linkLabel"
+                widget: "string"
+                hint: "Text shown on the link button — e.g. Initialize Download"
+
+  # ── Social Media ───────────────────────
+  - name: "social"
+    label: "Social Media"
+    files:
+      - name: "social"
+        label: "Social Media Page"
+        file: "data/social.json"
+        fields:
+          - label: "Platforms"
+            name: "platforms"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - label: "Platform"
+                name: "iconType"
+                widget: "select"
+                options:
+                  - label: "Instagram"
+                    value: "ig"
+                  - label: "Facebook"
+                    value: "fb"
+                  - label: "YouTube"
+                    value: "yt"
+
+              - label: "Profile URL"
+                name: "url"
+                widget: "string"
+                hint: "Full URL to the profile page."
+
+              - label: "Display Name"
+                name: "name"
+                widget: "string"
+                hint: "e.g. Instagram"
+
+              - label: "Handle or Page Name"
+                name: "handle"
+                widget: "string"
+                hint: "e.g. @2379rhlicadets"
+
+              - label: "Description"
+                name: "desc"
+                widget: "text"
+                hint: "1-2 sentences describing what followers will see."
+
+              - label: "Button Label"
+                name: "ctaLabel"
+                widget: "string"
+                hint: "e.g. Follow on Instagram"
+
+          - label: "Why Follow Cards"
+            name: "whyCards"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - label: "Emoji Icon"
+                name: "icon"
+                widget: "string"
+                hint: "A single emoji — e.g. 📸"
+
+              - label: "Title"
+                name: "title"
+                widget: "string"
+
+              - label: "Description"
+                name: "desc"
+                widget: "text"

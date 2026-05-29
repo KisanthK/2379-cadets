@@ -1,0 +1,29 @@
+{
+  "title": "Remembrance Day",
+  "year": "2024",
+  "label": "2025 Event",
+  "thumbnail": "feb-survival(10).jpg",
+  "thumbnailAlt": "Remembrance Day",
+  "cardDescription": "Memorial ceremony, guard duty, and remembrance across day and evening hours. 16 photos.",
+  "heroDescription": "Memorial ceremony, guard duty, and remembrance captured across day and evening hours.",
+  "heroImage": "feb-survival(10).jpg",
+  "galleryDescription": "Cadet presence, ceremonial posture, wreaths, and remembrance-focused moments from the annual event.",
+  "photos": [
+    { "src": "feb-survival(1).jpg",  "alt": "Cadet standing at attention beside the memorial during the event" },
+    { "src": "feb-survival(2).jpg",  "alt": "Cadet standing beside wreaths during the event" },
+    { "src": "feb-survival(3).jpg",  "alt": "Cadets positioned around the memorial site" },
+    { "src": "feb-survival(4).jpg",  "alt": "Cadets standing in formation around the monument" },
+    { "src": "feb-survival(5).jpg",  "alt": "Evening guard image of a cadet with ceremonial rifle" },
+    { "src": "feb-survival(6).jpg",  "alt": "Cadets posted at the memorial with attendees in the background" },
+    { "src": "feb-survival(7).jpg",  "alt": "Cadets and attendees surrounding the memorial during the event" },
+    { "src": "feb-survival(8).jpg",  "alt": "Cadet standing near wreaths and memorial stone" },
+    { "src": "feb-survival(9).jpg",  "alt": "Night-time cadet guard posture in front of the memorial" },
+    { "src": "feb-survival(10).jpg", "alt": "Cadets walking through the event area during the daytime ceremony" },
+    { "src": "feb-survival(11).jpg", "alt": "Night-time portrait of cadet with ceremonial rifle in front of the memorial" },
+    { "src": "feb-survival(12).jpg", "alt": "Cadets positioned on each side of the memorial during the ceremony" },
+    { "src": "feb-survival(13).jpg", "alt": "Cadets and memorial shown in a wide daytime event shot" },
+    { "src": "feb-survival(14).jpg", "alt": "Cadet standing in front of the memorial during the ceremony" },
+    { "src": "feb-survival(15).jpg", "alt": "Night-time cadet formation around the memorial site" },
+    { "src": "feb-survival(16).jpg", "alt": "Night-time memorial guard image with cadets in position" }
+  ]
+}

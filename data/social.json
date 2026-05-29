@@ -1,0 +1,60 @@
+{
+  "platforms": [
+    {
+      "iconType": "ig",
+      "url": "https://www.instagram.com/2379rhlicadets?igsh=MWJ1NjBuanF6MW9jZA==",
+      "name": "Instagram",
+      "handle": "@2379rhlicadets",
+      "desc": "Photos, reels, and stories from training nights, weekend exercises, and cadet life.",
+      "ctaLabel": "Follow on Instagram"
+    },
+    {
+      "iconType": "fb",
+      "url": "https://www.facebook.com/share/1B5SufQfsN/?mibextid=wwXIfr",
+      "name": "Facebook",
+      "handle": "2379 RHLI Army Cadets",
+      "desc": "Event announcements, community updates, and parent communications.",
+      "ctaLabel": "Follow on Facebook"
+    },
+    {
+      "iconType": "yt",
+      "url": "https://m.youtube.com/channel/UChEcBAsh6lWLfDkiWmSMeNQ",
+      "name": "YouTube",
+      "handle": "Community Cultures – Army Cadets",
+      "desc": "Video highlights, promotional content, and a window into the cadet training experience.",
+      "ctaLabel": "Watch on YouTube"
+    }
+  ],
+  "whyCards": [
+    {
+      "icon": "📸",
+      "title": "Training Photos",
+      "desc": "Action shots from weekly parade nights, field exercises, and skills training."
+    },
+    {
+      "icon": "🎖️",
+      "title": "Achievements",
+      "desc": "Promotions, awards, marksman badges, and cadet milestones celebrated publicly."
+    },
+    {
+      "icon": "📅",
+      "title": "Event Updates",
+      "desc": "Upcoming activities, registration reminders, and schedule changes posted in real time."
+    },
+    {
+      "icon": "🏕️",
+      "title": "Weekend Exercises",
+      "desc": "Highlights from field training exercises, biathlon, and outdoor adventure activities."
+    },
+    {
+      "icon": "👨‍👩‍👦",
+      "title": "Parent Resources",
+      "desc": "Important information, supply lists, and communications shared through our pages."
+    },
+    {
+      "icon": "🎬",
+      "title": "Video Content",
+      "desc": "Recap videos, promotional shorts, and behind-the-scenes looks at cadet life."
+    }
+  ]
+}

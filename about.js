@@ -1,12 +1,13 @@
-// ── Render officers from data/officers.js ──
-function renderOfficers() {
+// ── Render officers from data/officers.json ──
+function renderOfficers(officersData) {
     const list = document.getElementById("officers-list");
     const staffGrid = document.getElementById("staff-grid");
-    if (!list || !window.officersData) return;
+    if (!list || !officersData) return;
 
-    list.innerHTML = window.officersData.featured.map(function(o) {
+    list.innerHTML = officersData.featured.map(function(o) {
         var photoClass = "officer-photo" + (o.extraPhotoClass ? " " + o.extraPhotoClass : "");
-        var bioHtml = o.bio.map(function(p) { return "<p>" + p + "</p>"; }).join("");
+        var bioArr = Array.isArray(o.bio) ? o.bio : o.bio.split(/\n\n+/);
+        var bioHtml = bioArr.map(function(p) { return "<p>" + p.trim() + "</p>"; }).join("");
         var tagsHtml = o.tags.map(function(t) { return '<span class="chip">' + t + "</span>"; }).join("");
         return (
             '<article class="officer-card officer-card--featured reveal">' +
@@ -24,13 +25,32 @@ function renderOfficers() {
         );
     }).join("");
 
-    if (staffGrid && window.officersData.staff) {
-        staffGrid.innerHTML = window.officersData.staff.map(function(s) {
+    if (staffGrid && officersData.staff) {
+        staffGrid.innerHTML = officersData.staff.map(function(s) {
+            if (s.photo) {
+                var bioArr = s.bio ? (Array.isArray(s.bio) ? s.bio : s.bio.split(/\n\n+/)) : [];
+                var bioHtml = bioArr.map(function(p) { return "<p>" + p.trim() + "</p>"; }).join("");
+                var tagsHtml = (s.tags || []).map(function(t) { return '<span class="chip">' + t + "</span>"; }).join("");
+                return (
+                    '<article class="officer-card officer-card--featured reveal">' +
+                        '<div class="officer-accent"></div>' +
+                        '<div class="officer-photo-wrap">' +
+                            '<img src="' + s.photo + '" alt="' + (s.photoAlt || s.name) + '" class="officer-photo">' +
+                        '</div>' +
+                        '<div class="officer-body">' +
+                            '<div class="officer-rank-badge">' + s.rank + '</div>' +
+                            '<h3>' + s.name + '</h3>' +
+                            bioHtml +
+                            '<div class="officer-tags">' + tagsHtml + '</div>' +
+                        '</div>' +
+                    '</article>'
+                );
+            }
             return (
                 '<div class="staff-card">' +
                     '<div class="staff-icon">\uD83C\uDF96\uFE0F</div>' +
                     '<h4>' + s.name + '</h4>' +
-                    '<p>' + s.role + '</p>' +
+                    '<p>' + s.rank + '</p>' +
                 '</div>'
             );
         }).join("");
@@ -38,7 +58,15 @@ function renderOfficers() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    renderOfficers();
+    fetch("data/officers.json")
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+            renderOfficers(data);
+            document.querySelectorAll(".reveal:not(.active)").forEach(function(el) {
+                el.classList.add("active");
+            });
+        })
+        .catch(function(err) { console.error("Could not load officers data:", err); });
     const navbar = document.getElementById("navbar");
     const mobileToggle = document.getElementById("hammy");
     const navMenu = document.getElementById("nav-menu");
