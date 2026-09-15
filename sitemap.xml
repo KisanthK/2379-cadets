@@ -40,4 +40,24 @@
     <loc>https://2379-cadets.pages.dev/team.html</loc>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://2379-cadets.pages.dev/eventGallery.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://2379-cadets.pages.dev/februarySurvival.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://2379-cadets.pages.dev/ngataEvent.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://2379-cadets.pages.dev/noStone.html</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://2379-cadets.pages.dev/remembranceDay.html</loc>
+    <priority>0.5</priority>
+  </url>
 </urlset>
