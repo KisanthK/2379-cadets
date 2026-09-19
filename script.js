@@ -1,11 +1,8 @@
-// ── Render training schedule from data/schedule.json ──
-async function renderSchedule() {
+// ── Render training schedule from data/schedule.js ──
+function renderSchedule() {
     var card = document.getElementById("schedule-card");
-    if (!card) return;
-
-    var res = await fetch("data/schedule.json");
-    if (!res.ok) return;
-    var s = await res.json();
+    if (!card || !window.scheduleData) return;
+    var s = window.scheduleData;
     var btn = card.querySelector(".btn-primary-cta");
 
     var html =
@@ -33,11 +30,9 @@ async function renderSchedule() {
     card.insertAdjacentHTML("afterbegin", html);
 }
 
-// ── Render sponsors from data/sponsors.json ──
-async function renderSponsors() {
-    var res = await fetch("data/sponsors.json");
-    if (!res.ok) return;
-    var sponsorsData = await res.json();
+// ── Render sponsors from data/sponsors.js ──
+function renderSponsors() {
+    if (!window.sponsorsData) return;
 
     var primaryEl   = document.getElementById("primary-sponsors");
     var secondaryEl = document.getElementById("secondary-sponsors");
@@ -51,20 +46,21 @@ async function renderSponsors() {
     }
 
     if (primaryEl) {
-        primaryEl.innerHTML = sponsorsData.primary.map(function(s) {
+        primaryEl.innerHTML = window.sponsorsData.primary.map(function(s) {
             return logoCard(s, "logo-card-premium");
         }).join("");
     }
 
     if (secondaryEl) {
-        secondaryEl.innerHTML = sponsorsData.secondary.map(function(s) {
+        secondaryEl.innerHTML = window.sponsorsData.secondary.map(function(s) {
             return logoCard(s, "logo-card-standard");
         }).join("");
     }
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-    await Promise.all([renderSchedule(), renderSponsors()]);
+document.addEventListener("DOMContentLoaded", () => {
+    renderSchedule();
+    renderSponsors();
     const navbar = document.getElementById("navbar");
     const mobileToggle = document.getElementById("hammy");
     const navMenu = document.getElementById("nav-menu");
