@@ -1,0 +1,23 @@
+/* ─────────────────────────────────────────────
+   Volunteer disclaimer banner — shared by every page.
+   Edit the wording in each page's <div class="volunteer-disclaimer">;
+   edit the look here, once.
+   ───────────────────────────────────────────── */
+
+.volunteer-disclaimer {
+    background: #b30000;
+    color: #ffffff;
+    text-align: center;
+    padding: 12px 16px;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Most pages use a position: fixed, 80px-tall #navbar that would sit on top
+   of the banner and hide it. Push the banner down so it shows just below the
+   nav. Pages with a normal (sticky/static) .navbar don't need this. */
+body:has(> #navbar) > .volunteer-disclaimer {
+    margin-top: 80px;
+}
