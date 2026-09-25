@@ -783,7 +783,35 @@ nav.scrolled,
 }
 
 .glass-card:hover .pro-link-modern {
+    color: var(--surface-white);
+}
+
+/* Whole card is the click target: stretch the footer link over the card. */
+.pro-link-modern {
     color: var(--cadet-green);
+    font-size: 0.8rem;
+}
+
+.pro-link-modern::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.pro-link-modern span {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover .pro-link-modern span {
+    transform: translateX(6px);
+}
+
+.glass-card:focus-within {
+    border-color: var(--cadet-green);
+    outline: 2px solid var(--cadet-green);
+    outline-offset: 3px;
 }
 
 /* ===============================

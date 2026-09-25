@@ -373,7 +373,7 @@ collections:
               - label: "Status Badge"
                 name: "status"
                 widget: "string"
-                hint: "Short label shown at the top of the card — e.g. Updated, Mandatory, External"
+                hint: "Short label shown at the top of the card — e.g. PDF, Required, Guide, External Site"
 
               - label: "Title"
                 name: "title"
@@ -392,7 +392,7 @@ collections:
               - label: "Link Label"
                 name: "linkLabel"
                 widget: "string"
-                hint: "Text shown on the link button — e.g. Initialize Download"
+                hint: "Text shown on the link — e.g. Open Training Manual. Links to other websites open in a new tab automatically."
 
   # ── Social Media ───────────────────────
   - name: "social"

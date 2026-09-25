@@ -39,7 +39,8 @@ function renderPortalCards(cards) {
                     '</div>' +
                 '</div>' +
                 '<div class="card-footer">' +
-                    '<a href="' + c.linkUrl + '" class="pro-link-modern">' + c.linkLabel + ' <span>→</span></a>' +
+                    '<a href="' + c.linkUrl + '"' + (/^https?:/i.test(c.linkUrl) ? ' target="_blank" rel="noopener noreferrer"' : '') +
+                        ' class="pro-link-modern">' + c.linkLabel + ' <span aria-hidden="true">→</span></a>' +
                 '</div>' +
             '</div>'
         );
