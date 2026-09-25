@@ -138,6 +138,56 @@ collections:
                   name: "tag"
                   widget: "string"
 
+  # ── Unit Calendar ──────────────────────
+  - name: "calendar"
+    label: "Unit Calendar"
+    files:
+      - name: "events"
+        label: "Upcoming Events"
+        file: "data/events.json"
+        fields:
+          - label: "Events"
+            name: "events"
+            widget: "list"
+            summary: "{{fields.date}} — {{fields.title}}"
+            hint: "Past events are hidden from the website automatically — no need to delete them."
+            fields:
+              - label: "Event Name"
+                name: "title"
+                widget: "string"
+                hint: "e.g. Remembrance Day Parade"
+
+              - label: "Date"
+                name: "date"
+                widget: "datetime"
+                format: "YYYY-MM-DD"
+                date_format: "YYYY-MM-DD"
+                time_format: false
+
+              - label: "Start Time"
+                name: "startTime"
+                widget: "string"
+                required: false
+                hint: "24-hour, e.g. 18:30"
+
+              - label: "End Time"
+                name: "endTime"
+                widget: "string"
+                required: false
+                hint: "24-hour, e.g. 21:00"
+
+              - label: "Location"
+                name: "location"
+                widget: "string"
+                required: false
+                hint: "e.g. 3230 Fairview Street, or Burlington Cenotaph"
+
+              - label: "Details"
+                name: "details"
+                widget: "text"
+                required: false
+                hint: "Dress, what to bring, pickup time, etc."
+
   # ── Event Gallery Pages ───────────────
   - name: "event-galleries"
     label: "Event Galleries"

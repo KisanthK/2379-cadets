@@ -60,4 +60,8 @@
     <loc>https://2379-cadets.pages.dev/remembranceDay.html</loc>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://2379-cadets.pages.dev/calendar.html</loc>
+    <priority>0.7</priority>
+  </url>
 </urlset>

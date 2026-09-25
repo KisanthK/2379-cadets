@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Calendar | 2379 Burlington Army Cadets</title>
+    <meta name="description" content="Upcoming events for 2379 Burlington Army Cadets.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calendar.css">
+    <link rel="stylesheet" href="disclaimer.css">
+</head>
+<body>
+    <div class="volunteer-disclaimer" role="note">This site is run by volunteers and is not an official Department of National Defence / Cadets Canada website.</div>
+
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">2379 <span class="accent">CADETS</span></a>
+
+            <button
+                class="mobile-toggle"
+                id="hammy"
+                type="button"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="nav-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        <ul class="nav-links" id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="social.html">Socials</a></li>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="join.html" class="btn-nav-tactical">Join Unit</a></li>
+        </ul>
+
+        </div>
+    </nav>
+
+    <header class="hero hero--calendar">
+        <img src="groupOne.png" alt="2379 Burlington Army Cadets" class="hero-img">
+        <div class="hero-overlay">
+            <div class="hero-content-bottom">
+                <h1 class="hero-title-large">Unit <span>Calendar</span></h1>
+            </div>
+        </div>
+    </header>
+
+    <main class="resource-section">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <div class="calendar-list" id="events-list" aria-live="polite"></div>
+        </div>
+    </main>
+
+    <script src="shared.js"></script>
+    <script src="calendar.js"></script>
+</body>
+</html>
