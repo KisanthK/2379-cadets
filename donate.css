@@ -432,6 +432,7 @@ nav.scrolled {
     }
 }
 
+@media (max-width: 768px) {
     .hero {
         height: 60vh;
     }
@@ -1372,6 +1373,7 @@ nav.scrolled {
     }
 }
 
+@media (max-width: 768px) {
     .hero {
         height: 60vh;
     }
