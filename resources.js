@@ -47,7 +47,22 @@ function renderPortalCards(cards) {
     }).join("");
 }
 
+// Training day/time and entrance directions come from the same CMS entry
+// (Training Schedule → data/schedule.json) as the homepage card. The HTML
+// holds a fallback copy for when the fetch fails.
+function renderSchedule(s) {
+    var time = document.getElementById("schedule-training-time");
+    var entrance = document.getElementById("schedule-entrance-note");
+    if (time && s.trainingDay && s.trainingTime) time.textContent = s.trainingDay + ", " + s.trainingTime;
+    if (entrance && s.entranceNoteHtml) entrance.innerHTML = s.entranceNoteHtml;
+}
+
 document.addEventListener("DOMContentLoaded", () => {
+    fetch("data/schedule.json")
+        .then(function(r) { return r.json(); })
+        .then(renderSchedule)
+        .catch(function(err) { console.error("Could not load schedule data:", err); });
+
     fetch("data/resources.json")
         .then(function(r) { return r.json(); })
         .then(function(data) {
