@@ -1,0 +1,5 @@
+# Cloudflare Pages redirects
+# The old standalone Team page was replaced by the About page, whose officers
+# and staff are managed in the CMS (Officers & Staff).
+/team        /about  301
+/team.html   /about  301
