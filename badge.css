@@ -1816,3 +1816,14 @@ a, a:hover, a:visited, a:active {
 .info-card * {
     text-decoration: none !important; /* This targets EVERYTHING inside the card */
 }
+
+/* The nav's backdrop-filter makes it the containing block for the
+   position: fixed mobile menu, so the menu parked off-screen at
+   right: -100% widened the page and caused sideways scrolling on phones.
+   Clip horizontally only; the open menu still drops down below the nav.
+   Note: this file's "Responsive Mobile Fix" @media block is never closed,
+   so everything from there down (including this rule) only applies at
+   max-width: 768px — which is exactly where the menu is off-canvas. */
+.navbar {
+    overflow-x: clip;
+}
