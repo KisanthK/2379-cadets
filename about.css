@@ -1546,3 +1546,9 @@ img {
 .footer-credit a:hover {
     color: #fff;
 }
+
+/* Single Support Committee contact card (the general-inquiries address now
+   lives only in the "Get In Touch" section below), so one column. */
+.committee-contact-strip {
+    grid-template-columns: minmax(0, 420px);
+}
