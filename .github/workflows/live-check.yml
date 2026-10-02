@@ -1,0 +1,42 @@
+name: live-site-check
+on:
+  push:
+    branches: [claude/live-check]
+  workflow_dispatch:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Raw HTTP checks against production
+        run: |
+          B=https://2379-cadets.pages.dev
+          echo "== homepage headers"; curl -sI "$B/" | grep -iE "^(HTTP|etag|last-modified|cf-cache-status|age|cache-control|content-security-policy)" | cut -c1-160
+          echo "== Register link in served HTML"; curl -s "$B/" | grep -o '<a href="https://registration[^>]*>' || echo "NOT FOUND"
+          echo "== disclaimer.css linked?"; curl -s "$B/" | grep -c "disclaimer.css"
+          for p in /team /calendar /disclaimer.css /data/events.json /about /badge; do printf "%-20s %s\n" "$p" "$(curl -s -o /dev/null -w '%{http_code} -> %{redirect_url}' "$B$p")"; done
+          echo "== unique deploy URL for latest commit"; curl -s -o /dev/null -w '%{http_code}\n' https://290b5fde.2379-cadets.pages.dev/
+          curl -s https://290b5fde.2379-cadets.pages.dev/ | grep -o '<a href="https://registration[^>]*>' || echo "NOT FOUND on deploy URL"
+      - name: Real browser click test (Chromium + Firefox)
+        run: |
+          npm i -g playwright@1.56.1 >/dev/null 2>&1
+          npx -y playwright@1.56.1 install --with-deps chromium firefox >/dev/null 2>&1
+          cat > t.js <<'JS'
+          const pw = require(require('child_process').execSync('npm root -g').toString().trim()+'/playwright');
+          (async () => {
+            for (const name of ['chromium','firefox']) {
+              const b = await pw[name].launch(); const ctx = await b.newContext(); const p = await ctx.newPage();
+              await p.goto('https://2379-cadets.pages.dev/', {waitUntil:'networkidle'});
+              const attrs = await p.$eval('a.btn-primary-cta[href*="registration"]', a => `target=${a.getAttribute('target')} rel=${a.getAttribute('rel')}`).catch(e=>'link not found');
+              let result;
+              try {
+                const [popup] = await Promise.all([ctx.waitForEvent('page',{timeout:8000}), p.click('a.btn-primary-cta[href*="registration"]')]);
+                await popup.waitForLoadState().catch(()=>{});
+                result = `NEW TAB opened (${popup.url()}); original tab still ${p.url()}`;
+              } catch (e) { result = `NO new tab; original tab now at ${p.url()}`; }
+              const banner = await p.evaluate(()=>!!document.querySelector('.volunteer-disclaimer'));
+              console.log(`${name}: ${attrs} | ${result} | banner element present: ${banner}`);
+              await b.close();
+            }
+          })();
+          JS
+          node t.js
