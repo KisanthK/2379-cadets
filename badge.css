@@ -1150,6 +1150,17 @@ body { font-family: 'Montserrat', sans-serif; color: var(--text-slate); line-hei
         max-width: 300px;
         height: 140px;
     }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   PHONE-ONLY RULES (max-width: 768px) — everything down to the end of the file.
+   The "Responsive Mobile Fix" block above used to be missing its closing
+   brace, so the rest of this file only ever applied on phones. The desktop
+   design was built and approved in that state (some rules below would hide
+   the desktop nav text if applied on desktop), so this wrapper keeps them
+   phone-only on purpose. Put new desktop rules ABOVE this block.
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
 /* --- COMPREHENSIVE MOBILE RESPONSIVENESS --- */
 
 @media (max-width: 992px) {
@@ -1827,3 +1838,5 @@ a, a:hover, a:visited, a:active {
 .navbar {
     overflow-x: clip;
 }
+}
+/* end of phone-only rules */
